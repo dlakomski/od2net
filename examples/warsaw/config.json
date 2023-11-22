@@ -1,0 +1,23 @@
+{
+  "requests": {
+    "description": "Rowerowy skok cywilizacyjny. Połączenie osiedli z centrum.",
+    "pattern": {
+      "BetweenZones": {
+        "zones_path": "zones.geojson",
+        "csv_path": "od.csv"
+      }
+    },
+    "origins_path": "buildings.geojson",
+    "destinations_path": "buildings.geojson"
+  },
+  "cost": {
+    "ByLTS": {
+      "lts1": 1,
+      "lts2": 2,
+      "lts3": 5,
+      "lts4": 10
+    }
+  },
+  "uptake": "GoDutchPCT",
+  "lts": "GreenMazovia"
+}

@@ -40,7 +40,7 @@
     features: [],
   };
   let cost = "Distance";
-  let colorBy: "lts" | "cost" | "nearby_amenities" = "cost";
+  let colorBy: "lts" | "cost" | "nearby_amenities" = "lts";
   let showNotAllowed = false;
   let loading = false;
   // Note the 0th entry is "not allowed"; it won't be filled out at all

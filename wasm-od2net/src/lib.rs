@@ -53,7 +53,7 @@ impl JsNetwork {
         let network = Network::make_from_osm(
             is_pbf,
             input_bytes,
-            &od2net::config::LtsMapping::BikeOttawa,
+            &od2net::config::LtsMapping::GreenMazovia,
             &mut CostFunction::Distance,
             &mut timer,
         )
@@ -103,7 +103,7 @@ impl JsNetwork {
             },
             cost: self.last_cost.clone(),
             uptake: od2net::config::Uptake::Identity,
-            lts: od2net::config::LtsMapping::BikeOttawa,
+            lts: od2net::config::LtsMapping::GreenMazovia,
         };
 
         // Calculate single-threaded, until we figure out web workers

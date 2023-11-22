@@ -1,5 +1,6 @@
 mod allowed;
 mod bike_ottawa;
+mod green_mazovia;
 mod parse;
 mod speed_limit_only;
 mod tags;
@@ -12,6 +13,7 @@ use serde_repr::{Deserialize_repr, Serialize_repr};
 
 pub use allowed::is_cycling_allowed;
 pub use bike_ottawa::bike_ottawa;
+pub use green_mazovia::green_mazovia;
 pub use speed_limit_only::speed_limit_only;
 pub use tags::Tags;
 
