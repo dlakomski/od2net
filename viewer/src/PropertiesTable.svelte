@@ -10,7 +10,7 @@
     // Remember maplibre compacts nested feature properties, so we have to parse as JSON!
     tags = JSON.parse(properties.osm_tags);
     let { messages } = calculate({
-      method: "bike_ottawa",
+      method: "green_mazovia",
       tags,
     });
     ltsMessages = messages;

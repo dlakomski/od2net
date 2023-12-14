@@ -11,6 +11,24 @@ pub fn get_num_lanes(tags: &Tags, msgs: &mut Vec<String>) -> usize {
     2
 }
 
+pub fn get_maxspeed_kmph(tags: &Tags, msgs: &mut Vec<String>) -> usize {
+    if let Some(maxspeed) = tags.get("maxspeed") {
+        if let Ok(kmph) = maxspeed.parse::<f64>() {
+            return kmph.round() as usize;
+        }
+    }
+    // TODO Regional defaults
+    let default = match tags.get("highway").unwrap().as_str() {
+        "motorway" => 120,
+        "primary" | "secondary" => 90,
+        _ => 50,
+    };
+    msgs.push(format!(
+        "Guessing max speed is {default} kmph based on highway tag"
+    ));
+    default
+}
+
 pub fn get_maxspeed_mph(tags: &Tags, msgs: &mut Vec<String>) -> usize {
     if let Some(maxspeed) = tags.get("maxspeed") {
         if let Ok(kmph) = maxspeed.parse::<f64>() {
